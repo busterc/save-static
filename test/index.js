@@ -84,7 +84,7 @@ describe('save-static', function () {
 
   it('should save an index page response', done => {
     var page = baseUrl + '/?fluffy=stuff#ftw';
-    var file = path.join(staticPath, '/index');
+    var file = path.join(staticPath, '/index.html');
     isCleanRequestSave(page, file, done);
   });
 
