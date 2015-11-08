@@ -1,0 +1,53 @@
+{
+  "name": "save-static",
+  "version": "1.0.0",
+  "description": "Saves Express responses to a static directory for disk caching",
+  "author": {
+    "name": "Buster Collings",
+    "email": "busterc@gmail.com",
+    "url": "https://about.me/buster"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "keywords": [
+    "static",
+    "cache",
+    "caching",
+    "diskcache",
+    "diskcaching",
+    "disk",
+    "express",
+    "response",
+    "save",
+    "writefile",
+    "write",
+    "serve-static"
+  ],
+  "repository": "busterc/save-static",
+  "devDependencies": {
+    "babel-core": "^5.5.0",
+    "del": "^2.0.2",
+    "express": "^4.13.3",
+    "gulp": "^3.6.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-plumber": "^1.0.0",
+    "isparta": "^3.0.3",
+    "jade": "^1.11.0",
+    "request": "^2.65.0"
+  },
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  }
+}
