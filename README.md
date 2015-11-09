@@ -10,6 +10,8 @@ Then subsequent requests can be served from disk using:
   - [`Express.static()`](http://expressjs.com/4x/api.html#express.static)
   - [Nginx](https://www.nginx.com/resources/admin-guide/serving-static-content/)
 
+Use in conjunction with [serve-static-x](https://github.com/busterc/serve-static-x) for caching and re-caching files to disk.
+
 ## Install
 
 ```sh
@@ -37,11 +39,16 @@ app.get('/nfl/afc/east/teams', function(req, res, next) {
   }, saveStatic(res)); // <= easy as that
 
   // the render HTML will be saved to a file on disk at:
-  // staticPath + /nfl/afc/east/teams
+  // staticPath + /nfl/afc/east/teams.html
 
   // NOTE: you can pass a callback too, e.g. saveStatic(res, next)
   // however, if there is no error, the response will have already
   // been sent to the client.
+
+  // NOTE: a route for "/" will be saved on disk as 'index.html'
+
+  // NOTE: a route for "/something.xhtml" will be saved 
+  // on disk as 'something.xhtml'
 
 };
 ```

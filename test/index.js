@@ -22,7 +22,7 @@ describe('save-static', function () {
     app.set('views', __dirname);
     app.set('view engine', 'jade');
 
-    app.get(['/sub-level/timestamp', '/timestamp', '/'], (request, response, next) => {
+    app.get(['/sub-level/timestamp', '/timestamp', '/', '/as-is.xhtml'], (request, response, next) => {
       response.render('timestamp', {
         timestamp: Date()
       }, saveStatic(response, next));
@@ -90,13 +90,19 @@ describe('save-static', function () {
 
   it('should save a top-level path response', done => {
     var page = baseUrl + '/timestamp?fluffy=stuff#ftw';
-    var file = path.join(staticPath, '/timestamp');
+    var file = path.join(staticPath, '/timestamp.html');
     isCleanRequestSave(page, file, done);
   });
 
   it('should save a sub-level path response', done => {
     var page = baseUrl + '/sub-level/timestamp?fluffy=stuff#ftw';
-    var file = path.join(staticPath, '/sub-level/timestamp');
+    var file = path.join(staticPath, '/sub-level/timestamp.html');
+    isCleanRequestSave(page, file, done);
+  });
+
+  it('should save a response with an extension defined by the route', done => {
+    var page = baseUrl + '/as-is.xhtml?fluffy=stuff#ftw';
+    var file = path.join(staticPath, '/as-is.xhtml');
     isCleanRequestSave(page, file, done);
   });
 
