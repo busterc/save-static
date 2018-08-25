@@ -1,4 +1,7 @@
 # save-static [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/busterc/save-static.svg)](https://greenkeeper.io/)
+
 > Save Express responses to a static directory for disk caching
 
 Use save-static as a callback on Express [`Application.render()`](http://expressjs.com/4x/api.html#app.render) or [`Response.render()`](http://expressjs.com/4x/api.html#res.render) and it will:
